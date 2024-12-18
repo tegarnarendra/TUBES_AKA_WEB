@@ -1,0 +1,18 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.4.16"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "name": "tubes-aka_websearchfm",
+  "version": "1.0.0",
+  "main": "router.js",
+  "scripts": {
+    "dev": "node router.js | npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FMSearch</title>
+    <link href="/src/output.css" rel="stylesheet" />
+    <link
+      rel="icon"
+      type="image/jpg"
+      sizes="32x32"
+      href="/src/img/WhatsApp Image 2024-12-15 at 18.11.02_d7327356.jpg"
+    />
+  </head>
+  <body
+    class="bg-gradient-to-r from-slate-400 to-gray-600 w-screen h-screen overflow-x-hidden overflow-y-hidden"
+  >
+  <header
+  class="shadow-xl flex fixed bg-gradient-to-r from-white to-gray-100 text-teal-600 w-full justify-between py-4 px-6 top-0 left-0 right-0 z-50"
+>
+  <!-- Logo -->
+  <a
+    href="index.html"
+    class="text-3xl font-archivo font-bold hover:text-green-700 hover:duration-500 hover:transition-colors"
+  >
+    FMSEARCH
+  </a>
+
+  <!-- Button -->
+  <a
+    href="search.html"
+    class="px-4 py-2 text-white bg-teal-600 rounded-lg shadow-md hover:bg-teal-700 hover:duration-300 transition"
+  >
+    Get Started
+  </a>
+</header>
+    <main class="bg-gradient-to-r from-slate-400 to-gray-600 mx-auto my-auto flex items-stretch mt-20 ml-3">
+      <div class="grid grid-cols-4 gap-4">
+        <!-- Filter Section -->
+        <section
+          id="filter-section"
+          class="col-span-1 mb-6 bg-white p-4 bg-transparent"
+        >
+          <h2 class="text-xl font-semibold mb-2">Filters</h2>
+          <div class="grid grid-cols-1 gap-4">
+            <div>
+              <label for="name" class="block mb-2">Name:</label>
+              <input
+                type="text"
+                id="name-filter"
+                class="border rounded p-2 mb-2 w-full border-orange-600"
+                placeholder="Player name"
+              />
+            </div>
+            <div>
+              <label for="nationality" class="block mb-2">Nationality:</label>
+              <input
+                type="text"
+                id="nationality-filter"
+                class="border rounded p-2 mb-2 w-full border-orange-600"
+                placeholder="Nationality"
+              />
+            </div>
+            <div>
+              <label for="Value" class="block mb-2">Value:</label>
+              <input
+                type="number"
+                id="value-filter"
+                class="border rounded p-2 mb-2 w-full border-orange-600"
+                placeholder="Max Value"
+                step="100"
+                min="0"
+              />
+            </div>
+            <div>
+              <label for="CA" class="block mb-2">CA:</label>
+              <input
+                type="number"
+                id="ca-filter"
+                class="border rounded p-2 mb-2 w-full border-orange-600"
+                placeholder="Current Ability"
+                min="0"
+                max="100"
+              />
+            </div>
+            <div>
+              <label for="position" class="block mb-2">Position:</label>
+              <select
+                id="position-filter"
+                class="border rounded p-2 mb-4 w-full border-orange-600"
+              >
+                <option value="">All</option>
+                <option value="Forward">Forward</option>
+                <option value="Midfielder">Midfielder</option>
+                <option value="Defender">Defender</option>
+                <option value="Goalkeeper">Goalkeeper</option>
+              </select>
+              <div>
+                <label for="PA" class="block mb-2">PA:</label>
+                <input
+                  type="number"
+                  id="ca-filter"
+                  class="border rounded p-2 mb-2 w-full border-orange-600"
+                  placeholder="Potential Ability"
+                  min="0"
+                  max="100"
+                />
+              </div>
+              <div>
+                <label for="submit" class="block mb-2"></label>
+                <button class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-full">
+                  Search
+                </button>
+            </div>
+          </div>
+        </section>
+        <!-- Player List Section -->
+        <section
+          id="player-list"
+          class="col-span-3 bg-white p-4 bg-transparent"
+        >
+          <h2 class="text-xl font-semibold mb-4">Players</h2>
+          <table class="min-w-full bg-white border border-gray-300">
+            <thead>
+              <tr class="bg-teal-600 font-archivo">
+                <th class="border px-4 py-2 text-white">Name</th>
+                <th class="border px-4 py-2 text-white">Position</th>
+                <th class="border px-4 py-2 text-white">Age</th>
+                <th class="border px-4 py-2 text-white">CA</th>
+                <th class="border px-4 py-2 text-white">PA</th>
+                <th class="border px-4 py-2 text-white">Special Attribute</th>
+                <th class="border px-4 py-2 text-white">Reputation</th>
+                <th class="border px-4 py-2 text-white">Market Value</th>
+                <th class="border px-4 py-2 text-white">Wage</th>
+                <th class="border px-4 py-2 text-white">Nationality</th>
+              </tr>
+            </thead>
+            <tbody id="player-data">
+              <!-- Data populated by JS -->
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </main>
+
+    <script src="index/index.js"></script>
+  </body>
+</html>
