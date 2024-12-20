@@ -48,7 +48,7 @@
               <input
                 type="text"
                 id="name-filter"
-                class="border rounded p-2 mb-2 w-full border-orange-600"
+                class="border rounded p-2 mb-2 w-full border-teal-600"
                 placeholder="Player name"
               />
             </div>
@@ -57,7 +57,7 @@
               <input
                 type="text"
                 id="nationality-filter"
-                class="border rounded p-2 mb-2 w-full border-orange-600"
+                class="border rounded p-2 mb-2 w-full border-teal-600"
                 placeholder="Nationality"
               />
             </div>
@@ -66,7 +66,7 @@
               <input
                 type="number"
                 id="value-filter"
-                class="border rounded p-2 mb-2 w-full border-orange-600"
+                class="border rounded p-2 mb-2 w-full border-teal-600"
                 placeholder="Max Value"
                 step="100"
                 min="0"
@@ -77,7 +77,7 @@
               <input
                 type="number"
                 id="ca-filter"
-                class="border rounded p-2 mb-2 w-full border-orange-600"
+                class="border rounded p-2 mb-2 w-full border-teal-600"
                 placeholder="Current Ability"
                 min="0"
                 max="100"
@@ -87,7 +87,7 @@
               <label for="position" class="block mb-2">Position:</label>
               <select
                 id="position-filter"
-                class="border rounded p-2 mb-4 w-full border-orange-600"
+                class="border rounded p-2 mb-4 w-full border-teal-600"
               >
                 <option value="">All</option>
                 <option value="Forward">Forward</option>
@@ -100,7 +100,7 @@
                 <input
                   type="number"
                   id="ca-filter"
-                  class="border rounded p-2 mb-2 w-full border-orange-600"
+                  class="border rounded p-2 mb-2 w-full border-teal-600"
                   placeholder="Potential Ability"
                   min="0"
                   max="100"
@@ -108,7 +108,7 @@
               </div>
               <div>
                 <label for="submit" class="block mb-2"></label>
-                <button class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-full">
+                <button class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded-full">
                   Search
                 </button>
             </div>
@@ -123,16 +123,17 @@
           <table class="min-w-full bg-white border border-gray-300">
             <thead>
               <tr class="bg-teal-600 font-archivo">
-                <th class="border px-4 py-2 text-white">Name</th>
-                <th class="border px-4 py-2 text-white">Position</th>
-                <th class="border px-4 py-2 text-white">Age</th>
+                <th class="border px-4 py-2 text-white">Nama</th>
+                <th class="border px-4 py-2 text-white">Posisi</th>
+                <th class="border px-4 py-2 text-white">Umur</th>
+                <th class="border px-4 py-2 text-white">Klub</th>
                 <th class="border px-4 py-2 text-white">CA</th>
                 <th class="border px-4 py-2 text-white">PA</th>
-                <th class="border px-4 py-2 text-white">Special Attribute</th>
-                <th class="border px-4 py-2 text-white">Reputation</th>
-                <th class="border px-4 py-2 text-white">Market Value</th>
-                <th class="border px-4 py-2 text-white">Wage</th>
-                <th class="border px-4 py-2 text-white">Nationality</th>
+                <th class="border px-4 py-2 text-white">Spesial</th>
+                <th class="border px-4 py-2 text-white">Reputasi</th>
+                <th class="border px-4 py-2 text-white">Harga</th>
+                <th class="border px-4 py-2 text-white">Gaji</th>
+                <th class="border px-4 py-2 text-white">Kebangsaan</th>
               </tr>
             </thead>
             <tbody id="player-data">

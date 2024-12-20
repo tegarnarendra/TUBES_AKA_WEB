@@ -1,73 +1,96 @@
 const fs = require("fs");
-var arrayData = [];
 
 function randomData(maxCount) {
   const dataPlayer = require("./namaPlayer.json"); // Mengambil daftar nama pemain
-  const specialAtribut = ["Dribling", "Passing", "Shooting"]; // Atribut spesial
-  const nationality = ["Indonesia", "Belanda", "Jepang", "Ciseeng"]; // Kebangsaan
-  const reputation = ["Star", "Wonderkid", "Veteran"]; // Reputasi
+  const dataClub = require("./club.json"); // Mengambil nama Club
+  const specialAtribut = [
+    "Dribling",
+    "Passing",
+    "Shooting",
+    "Tackling",
+    "Goalkeeping",
+    "Sweeper Keeper",
+    "Crossing",
+    "Set Piece",
+    "Aerial",
+    " ",
+  ]; // Atribut spesial
+  const nationality = [
+    "Indonesia",
+    "Belanda",
+    "Jepang",
+    "Ciseeng",
+    "Jerman",
+    "Inggris",
+    "Thailand",
+    "Malaysia",
+    "Denmark",
+    "Italia",
+    "Korea",
+    "Serbia",
+    "Russia",
+  ]; // Kebangsaan
+  const reputation = [
+    "Star",
+    "Wonderkid",
+    "Hidden Gem",
+    "Future Prospect",
+    "World-Class",
+    "Cult Hero",
+  ]; // Reputasi
   const position = ["Goalkeeper", "Defender", "Midfielder", "Attacker"]; // Posisi pemain
 
-  // Iterasi berdasarkan semua kombinasi data
-  for (let m = 0; m < dataPlayer.length; m++) {
-    // Iterasi nama pemain
-    for (let i = 20; i <= 25; i++) {
-      // Umur
-      for (let j = 75; j <= 80; j++) {
-        // Current Ability (CA)
-        for (let k = 90; k <= 95; k++) {
-          // Potential Ability (PA)
-          for (let l = 100000; l <= 500000; l += 100000) {
-            // Harga dan gaji
-            for (let n = 0; n < specialAtribut.length; n++) {
-              // Atribut spesial
-              for (let o = 0; o < nationality.length; o++) {
-                // Kebangsaan
-                for (let p = 0; p < reputation.length; p++) {
-                  // Reputasi
-                  for (let q = 0; q < position.length; q++) {
-                    // Posisi pemain
-                    if (arrayData.length >= maxCount) {
-                      return arrayData; // Berhenti jika sudah mencapai jumlah yang diinginkan
-                    }
+  const arrayData = [];
 
-                    let data = {
-                      nama: dataPlayer[m],
-                      umur: i,
-                      posisi: position[q],
-                      ca: j,
-                      pa: k,
-                      specialAtribut: specialAtribut[n],
-                      reputation: reputation[p],
-                      nationality: nationality[o],
-                      gaji: l - 10000,
-                      harga: l,
-                    };
+  for (let count = 0; count < maxCount; count++) {
+    const randomName =
+      dataPlayer[Math.floor(Math.random() * dataPlayer.length)];
+    const randomAge = Math.floor(Math.random() * 25) + 16; // Umur 16-40
+    const randomCA = Math.floor(Math.random() * 6) + 75; // CA 75-80
+    const randomPA = Math.floor(Math.random() * 6) + 90; // PA 90-95
+    const randomSalary = (Math.floor(Math.random() * 5) + 1) * 100000; // Harga 100000 - 500000
+    const randomSpecial =
+      specialAtribut[Math.floor(Math.random() * specialAtribut.length)];
+    const randomNation =
+      nationality[Math.floor(Math.random() * nationality.length)];
+    const randomReputation =
+      reputation[Math.floor(Math.random() * reputation.length)];
+    const randomPosition =
+      position[Math.floor(Math.random() * position.length)];
+    const randomClub = dataClub[Math.floor(Math.random() * dataClub.length)];
 
-                    arrayData.push(data); // Tambahkan data ke array
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
+    const data = {
+      nama: randomName,
+      umur: randomAge,
+      club: randomClub,
+      posisi: randomPosition,
+      ca: randomCA,
+      pa: randomPA,
+      specialAtribut: randomSpecial,
+      reputation: randomReputation,
+      nationality: randomNation,
+      gaji: randomSalary - 10000,
+      harga: randomSalary,
+    };
+
+    arrayData.push(data); // Tambahkan data ke array
   }
 
-  return arrayData; // Kembalikan array data jika loop selesai
+  return arrayData;
 }
 
 // Membatasi hingga 10.000 data
 const randomDataArray = randomData(10000);
 
-fs.appendFile(
+fs.writeFile(
   "./back-end/Data/pemain.json",
-  JSON.stringify(arrayData),
+  JSON.stringify(randomDataArray, null, 2), // Tambahkan pemformatan JSON agar lebih rapi
   (err) => {
     if (err) {
       throw err;
     }
+    console.log("Data pemain berhasil disimpan!");
   }
 );
+
 console.log(randomDataArray.length);
