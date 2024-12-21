@@ -13,7 +13,6 @@ function randomData(maxCount) {
     "Crossing",
     "Set Piece",
     "Aerial",
-    " ",
   ]; // Atribut spesial
   const nationality = [
     "Indonesia",
@@ -69,7 +68,7 @@ function randomData(maxCount) {
       specialAtribut: randomSpecial,
       reputation: randomReputation,
       nationality: randomNation,
-      gaji: randomSalary - 10000,
+      gaji: randomSalary / 2,
       harga: randomSalary,
     };
 

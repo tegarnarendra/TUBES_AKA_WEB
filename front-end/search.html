@@ -13,8 +13,9 @@
     />
   </head>
   <body
-    class="bg-gradient-to-r from-slate-400 to-gray-600 w-screen h-screen overflow-x-hidden overflow-y-hidden"
-  >
+  class="bg-gradient-to-r from-slate-400 to-gray-600 w-screen h-screen overflow-x-hidden"
+>
+
   <header
   class="shadow-xl flex fixed bg-gradient-to-r from-white to-gray-100 text-teal-600 w-full justify-between py-4 px-6 top-0 left-0 right-0 z-50"
 >
@@ -26,13 +27,6 @@
     FMSEARCH
   </a>
 
-  <!-- Button -->
-  <a
-    href="search.html"
-    class="px-4 py-2 text-white bg-teal-600 rounded-lg shadow-md hover:bg-teal-700 hover:duration-300 transition"
-  >
-    Get Started
-  </a>
 </header>
     <main class="bg-gradient-to-r from-slate-400 to-gray-600 mx-auto my-auto flex items-stretch mt-20 ml-3">
       <div class="grid grid-cols-4 gap-4">
@@ -50,6 +44,17 @@
                 id="name-filter"
                 class="border rounded p-2 mb-2 w-full border-teal-600"
                 placeholder="Player name"
+              />
+            </div>
+            <div>
+              <label for="Age" class="block mb-2">Age:</label>
+              <input
+                type="number"
+                id="age-filter"
+                class="border rounded p-2 mb-2 w-full border-teal-600"
+                placeholder="age"
+                min = "16"
+                max = "40"
               />
             </div>
             <div>
@@ -73,12 +78,34 @@
               />
             </div>
             <div>
+              <label for="wage" class="block mb-2">Wage:</label>
+              <input
+                type="number"
+                id="wage-filter"
+                class="border rounded p-2 mb-2 w-full border-teal-600"
+                placeholder="Max Value"
+                step="100"
+                min="0"
+              />
+            </div>
+            <div>
               <label for="CA" class="block mb-2">CA:</label>
               <input
                 type="number"
                 id="ca-filter"
                 class="border rounded p-2 mb-2 w-full border-teal-600"
                 placeholder="Current Ability"
+                min="0"
+                max="100"
+              />
+            </div>
+            <div>
+              <label for="PA" class="block mb-2">PA:</label>
+              <input
+                type="number"
+                id="pa-filter"
+                class="border rounded p-2 mb-2 w-full border-teal-600"
+                placeholder="Potential Ability"
                 min="0"
                 max="100"
               />
@@ -96,19 +123,25 @@
                 <option value="Goalkeeper">Goalkeeper</option>
               </select>
               <div>
-                <label for="PA" class="block mb-2">PA:</label>
-                <input
-                  type="number"
-                  id="ca-filter"
-                  class="border rounded p-2 mb-2 w-full border-teal-600"
-                  placeholder="Potential Ability"
-                  min="0"
-                  max="100"
-                />
-              </div>
+                <label for="speciality" class="block mb-2">Speciality:</label>
+                <select
+                  id="speciality-filter"
+                  class="border rounded p-2 mb-4 w-full border-teal-600"
+                >
+                  <option value="">All</option>
+                  <option value="Dribling">Dribling</option>
+                  <option value="Passing">Passing</option>
+                  <option value="Shooting">Shooting</option>
+                  <option value="Tackling">Tackling</option>
+                  <option value="Goalkeeping">Goalkeeping</option>
+                  <option value="Sweeper Keeper">Sweeper Keeper</option>
+                  <option value="Crossing">Crossing</option>
+                  <option value="Set Piece">Set Piece</option>
+                  <option value="Aerial">Aerial</option>
+                </select>
               <div>
                 <label for="submit" class="block mb-2"></label>
-                <button class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded-full">
+                <button id="search-btn" class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded-full">
                   Search
                 </button>
             </div>
@@ -144,6 +177,6 @@
       </div>
     </main>
 
-    <script src="index/index.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
