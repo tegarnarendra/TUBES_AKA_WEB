@@ -4,7 +4,7 @@ let playersData = [];
 document.addEventListener('DOMContentLoaded', () => {
     // Memuat data JSON
     async function loadPlayerData() {
-        const response = await fetch('pemain.json'); // Sesuaikan jalur JSON
+        const response = await fetch('/back-end/Data/pemain.json'); // Sesuaikan jalur JSON
         playersData = await response.json();
         displayPlayers(playersData);
     }
@@ -32,23 +32,4 @@ document.addEventListener('DOMContentLoaded', () => {
             playerTable.appendChild(row);
         });
     }
-
-    // Menangani pencarian
-    document.getElementById('search-btn').addEventListener('click', (event) => {
-        const searchTerm = event.target.value.toLowerCase();
-        const filteredPlayers = [];
-
-        // Menggunakan for dan if untuk mencari pemain
-        for (let i = 0; i < playersData.length; i++) {
-            const player = playersData[i];
-            if (player.nama.toLowerCase().includes(searchTerm) || player.club.toLowerCase().includes(searchTerm)) {
-                filteredPlayers.push(player);
-            }
-        }
-
-        displayPlayers(filteredPlayers);
-    });
-
-    // Panggil fungsi loadPlayerData saat halaman dimuat
-    loadPlayerData();
 });
