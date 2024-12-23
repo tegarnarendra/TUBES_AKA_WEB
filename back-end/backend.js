@@ -1,4 +1,4 @@
-const isRecursive = true; // rekursif aktif //
+const isRecursive = false; // rekursif aktif //
 const data = require('./Data/pemain.json')
 const iteratif = require('./iterative.js')
 const rekursif = require('./recursive.js')
@@ -85,7 +85,7 @@ function iterative(request, data) {
 }
 
 function prosesPencarian(request, data){
-  var jumlahData = 1000
+  var jumlahData = 10000
   var filteredData = []
   var filteredData2 = []
   var resultData = [] 
@@ -103,7 +103,7 @@ function prosesPencarian(request, data){
     }
   }
   console.log(filteredData.length)
-  if(isRecursive){
+  if(isRecursive == true){
     const dibagi = filteredData2.length
     startRuntime = runtime.timeStart()
     if(dibagi!=0){
@@ -129,4 +129,5 @@ function dataRuntime(req, res){
   res.status(200)
   res.send(dataRunningTime)
 }
+
 module.exports = { cariPlayer, dataRuntime };
