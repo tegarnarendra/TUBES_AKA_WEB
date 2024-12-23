@@ -52,7 +52,7 @@
                 type="number"
                 id="age-filter"
                 class="border rounded p-2 mb-2 w-full border-teal-600"
-                placeholder="age"
+                placeholder="Age"
                 min = "16"
                 max = "40"
               />
@@ -72,7 +72,7 @@
                 type="number"
                 id="value-filter"
                 class="border rounded p-2 mb-2 w-full border-teal-600"
-                placeholder="Max Value"
+                placeholder="Value"
                 step="100"
                 min="0"
               />
@@ -83,7 +83,7 @@
                 type="number"
                 id="wage-filter"
                 class="border rounded p-2 mb-2 w-full border-teal-600"
-                placeholder="Max Value"
+                placeholder="Value"
                 step="100"
                 min="0"
               />
@@ -110,6 +110,20 @@
                 max="100"
               />
             </div>
+            <div>
+              <label for="reputation" class="block mb-2">Reputation:</label>
+              <select
+                id="reputation-filter"
+                class="border rounded p-2 mb-4 w-full border-teal-600"
+              >
+                <option value="">All</option>
+                <option value="Star">Star</option>
+                <option value="Wonderkid">Wonderkid</option>
+                <option value="Hidden Gem">Hidden Gem</option>
+                <option value="Future Prospect">Future Prospect</option>
+                <option value="World-Class">World-Class</option>
+                <option value="Cult Hero">Cult Hero</option>
+              </select>
             <div>
               <label for="position" class="block mb-2">Position:</label>
               <select
@@ -141,7 +155,7 @@
                 </select>
               <div>
                 <label for="submit" class="block mb-2"></label>
-                <button id="search-btn" class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded-full">
+                <button onclick="cariData()" id="search-btn" class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded-full">
                   Search
                 </button>
             </div>

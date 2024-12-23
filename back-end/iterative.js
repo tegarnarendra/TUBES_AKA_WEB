@@ -21,7 +21,7 @@ function IterativeUmur(requests,data){
 function IterativePosisi(requests,data){
     var hasil=[]
     for(let i = 0; i < data.length; i++){
-        if(requests.posisi === data[i].posisi){
+        if(requests.position === data[i].posisi){
             hasil.push(data[i])
         }
     }
@@ -31,7 +31,7 @@ function IterativePosisi(requests,data){
 function IterativeCAbility(requests,data){
     var hasil=[]
     for(let i = 0; i < data.length; i++){
-        if(requests.current === data[i].ca){
+        if(requests.ca === data[i].ca){
             hasil.push(data[i])
         }
     }
@@ -41,7 +41,7 @@ function IterativeCAbility(requests,data){
 function IterativePAbility(requests,data){
     var hasil=[]
     for(let i = 0; i < data.length; i++){
-        if(requests.potential === data[i].pa){
+        if(requests.pa === data[i].pa){
             hasil.push(data[i])
         }
     }
@@ -51,7 +51,7 @@ function IterativePAbility(requests,data){
 function IterativeSpecial(requests,data){
     var hasil=[]
     for(let i = 0; i < data.length; i++){
-        if(requests.special === data[i].specialAtribut){
+        if(requests.speciality === data[i].specialAtribut){
             hasil.push(data[i])
         }
     }
@@ -81,7 +81,7 @@ function IterativeNationality(requests,data){
 function IterativeGaji(requests,data){
     var hasil=[]
     for(let i = 0; i < data.length; i++){
-        if(requests.gaji === data[i].gaji){
+        if(requests.wage === data[i].gaji){
             hasil.push(data[i])
         }
     }
@@ -91,7 +91,7 @@ function IterativeGaji(requests,data){
 function IterativeHarga(requests,data){
     var hasil=[]
     for(let i = 0; i < data.length; i++){
-        if(requests.harga === data[i].harga){
+        if(requests.value === data[i].harga){
             hasil.push(data[i])
         }
     }
